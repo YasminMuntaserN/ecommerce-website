@@ -1,24 +1,21 @@
-select:focus,
-input:focus {
-  outline: 2px solid rgb(255, 153, 0);
-}
-
 p {
   margin: 0;
 }
 
-button {
+button,select {
   cursor: pointer;
 }
 
-select {
-  cursor: pointer;
-}
 
 input,
 select,
 button {
   font-family: Roboto, Arial;
+}
+
+select:focus,
+input:focus {
+  outline: 2px solid rgb(255, 153, 0);
 }
 
 .button-primary {
@@ -50,6 +47,18 @@ button {
   box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
 }
 
+/* Styles for dropdown selectors. */
+select {
+  color: rgb(33, 33, 33);
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(213, 217, 217);
+  border-radius: 8px;
+  padding: 3px 5px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+}
+
 .button-secondary:hover {
   background-color: rgb(247, 250, 250);
 }
@@ -77,19 +86,5 @@ button {
   color: rgb(196, 80, 0);
 }
 
-/* Styles for dropdown selectors. */
-select {
-  color: rgb(33, 33, 33);
-  background-color: rgb(240, 240, 240);
-  border: 1px solid rgb(213, 217, 217);
-  border-radius: 8px;
-  padding: 3px 5px;
-  font-size: 15px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
-}
 
-select:focus,
-input:focus {
-  outline: 2px solid rgb(255, 153, 0);
-}
+
