@@ -1,3 +1,4 @@
+import { products } from '../EntitiesData/productData.js';
 
 export const product = {
   id: '',               
@@ -9,3 +10,13 @@ export const product = {
   },    
   priceCents: 0  
 };
+
+export function getProductByID(productID) {
+  let p =null;
+  products.forEach(product => {
+    if(product.id === productID){
+      p=  product;
+  };
+  });
+  return p;
+}

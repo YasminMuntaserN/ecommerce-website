@@ -1,6 +1,8 @@
-import { products } from './EntitiesData/ProductData.js';
+import { products } from './EntitiesData/productData.js';
 
 import { formatCurrency } from "./utils/global.js";
+
+import { formatCurrency } from "./Entities/cart.js";
 
 function htmlCompleteHtml(){
   return `<div class="product-quantity-container">
@@ -30,6 +32,7 @@ function htmlCompleteHtml(){
       Add to Cart
     </button>`;
 }
+
 function generateHTMLToDisplayProducts()
 {
   let html = "";
@@ -71,8 +74,12 @@ function DisplayProductsInMain(){
   document.querySelector(".js-products-grid").innerHTML=generateHTMLToDisplayProducts();
 }
 
+function Events(){
+  
+}
 function main(){
-  DisplayProductsInMain();
+ // DisplayProductsInMain();
+
 }
 
 main();
