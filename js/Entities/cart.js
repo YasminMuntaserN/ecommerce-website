@@ -71,9 +71,9 @@ export function renderCartItem() {
             </div>
 
             
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="f297d333-a5c4-452f-840b-15a662257b3f" data-testid="delivery-option-f297d333-a5c4-452f-840b-15a662257b3f">
+      <div class="js-delivery-option delivery-option"> 
 
-        <input class="js-delivery-option-input delivery-option-input" checked="" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
+        <input class="js-delivery-option-input delivery-option-input" name="delivery-option-${item.productId}" type="radio" data-testid="delivery-option-input">
 
         <div>
           <div class="delivery-option-date">
@@ -85,9 +85,9 @@ export function renderCartItem() {
         </div>
       </div>
     
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156" data-testid="delivery-option-6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156">
+      <div class="js-delivery-option delivery-option" >
 
-        <input class="js-delivery-option-input delivery-option-input" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
+        <input class="js-delivery-option-input delivery-option-input" name="delivery-option-${item.productId}"" type="radio" data-testid="delivery-option-input">
 
         <div>
           <div class="delivery-option-date">
@@ -99,9 +99,9 @@ export function renderCartItem() {
         </div>
       </div>
     
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="178aa766-de75-4686-8442-038c1a027003" data-testid="delivery-option-178aa766-de75-4686-8442-038c1a027003">
+      <div class="js-delivery-option delivery-option" >
 
-        <input class="js-delivery-option-input delivery-option-input" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
+        <input class="js-delivery-option-input delivery-option-input" name="delivery-option-${item.productId}" type="radio" data-testid="delivery-option-input">
 
         <div>
           <div class="delivery-option-date">
@@ -124,3 +124,34 @@ document.querySelector(".js-cart-summary").innerHTML= html;
 
 
 }
+
+function productExsisAlreadyAdded(productID) {
+  cartItems.forEach(item => {
+      if(item.productId === productID) return item;
+  });
+  return null;
+}
+
+function PreviousQuantity(productID) {
+  let quantity =1;
+  let item =productExsisAlreadyAdded(product.productId);
+
+  if(item)quantity+=item.quantity;  
+
+  return quantity;
+}
+
+export function AddToCart (productID){
+  const product = getProductByID(productID);
+      if (!product) {
+        return;
+      }
+      cartItems.push(
+        {
+          productId:product.productId,
+          quantity:PreviousQuantity(product.productId),
+          deliveryOptionId: '3'
+        }
+      );
+      console.log("added");
+    }

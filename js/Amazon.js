@@ -2,8 +2,9 @@ import { products } from './EntitiesData/productData.js';
 
 import { formatCurrency } from "./utils/global.js";
 
-import { formatCurrency } from "./Entities/cart.js";
+import {AddToCart } from "./Entities/cart.js";
 
+import { renderCartItem } from './Entities/cart.js';
 function htmlCompleteHtml(){
   return `<div class="product-quantity-container">
       <select class="js-quantity-selector" data-testid="quantity-selector">
@@ -74,12 +75,17 @@ function DisplayProductsInMain(){
   document.querySelector(".js-products-grid").innerHTML=generateHTMLToDisplayProducts();
 }
 
-function Events(){
-  
+export function AddToCartInCheckOut(){
+  document.querySelectorAll('.js-add-to-cart-button').forEach((button)=>{
+    button.addEventListener("click",()=>{
+      const productId =button.dataset.productId;
+      AddToCart(productId);
+      console.log("done");
+    });
+  });
 }
 function main(){
- // DisplayProductsInMain();
-
+  DisplayProductsInMain();
+  AddToCartInCheckOut();
 }
-
 main();

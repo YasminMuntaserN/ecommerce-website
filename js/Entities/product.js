@@ -16,6 +16,7 @@ export function getProductByID(productID) {
   products.forEach(product => {
     if(product.id === productID){
       p=  product;
+      console.log("Founded");
   };
   });
   return p;
