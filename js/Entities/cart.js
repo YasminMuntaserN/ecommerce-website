@@ -1,7 +1,7 @@
 import { getProductByID } from './product.js';
 import { formatCurrency } from "../utils/global.js";
 import { Now ,formatDate } from "../utils/date.js";
-import { cartItems } from "../EntitiesData/cartData.js";
+import { cartItems ,setCartItems } from "../EntitiesData/cartData.js";
 
 
 const cart =
@@ -20,8 +20,7 @@ export function renderCartItem() {
       return;
     }
     html+= `
-    <div class="js-cart-item cart-item-container" 
-    data-cart-item-id="${item.productId}" data-testid="cart-item-container-${item.productId}" >
+    <div class="js-cart-item cart-item-container-${item.productId}" >
 
         <div class="delivery-date">
           Delivery date:
@@ -59,7 +58,8 @@ export function renderCartItem() {
                 Save
               </span>
 
-              <span class="js-delete-quantity-link delete-quantity-link link-primary" data-testid="delete-quantity-link">
+              <span class="js-delete-quantity-link delete-quantity-link link-primary"
+                data-product-id=${item.productId}>
                 Delete
               </span>
             </div>
@@ -153,5 +153,16 @@ export function AddToCart (productID){
           deliveryOptionId: '3'
         }
       );
-      console.log("added");
-    }
+      renderCartItem();
+}
+
+export function removeItemFromCart(productId)
+{
+  // let newcartItems = cartItems.filter((item) => item.id !== productId); // This will create a new array excluding the productId
+  let newcartItems = [];
+  cartItems.forEach((item) => {
+    if (item.productId !== productId) 
+      newcartItems.push(item);
+  });
+  setCartItems(newcartItems);
+}
