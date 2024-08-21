@@ -2,10 +2,10 @@ import { products } from './EntitiesData/productData.js';
 
 import { formatCurrency } from "./utils/global.js";
 
-import {AddToCart } from "./Entities/cart.js";
+import {AddToCart ,getItemQuantityItems} from "./Entities/cart.js";
 
 import { renderCartItem } from './Entities/cart.js';
-function htmlCompleteHtml(){
+function htmlCompleteHtml(productId){
   return `<div class="product-quantity-container">
       <select class="js-quantity-selector" data-testid="quantity-selector">
         <option selected="" value="1">1</option>
@@ -25,11 +25,11 @@ function htmlCompleteHtml(){
 
     <div class="product-spacer"></div>
 
-    <div class="js-added-to-cart-message added-to-cart-message" >
+    <div class=" added-to-cart-message added-to-cart-message-${productId}" >
     </div> 
 
     <button class="js-add-to-cart-button
-      add-to-cart-button button-primary" data-testid="add-to-cart-button">
+      add-to-cart-button button-primary" data-product-id="${productId}">
       Add to Cart
     </button>`;
 }
@@ -64,7 +64,7 @@ function generateHTMLToDisplayProducts()
     <div class="product-price">
       $${formatCurrency(product.priceCents)}
     </div>
-     ${htmlCompleteHtml()}
+     ${htmlCompleteHtml(product.id)}
  </div>
     `
   });
@@ -75,17 +75,22 @@ function DisplayProductsInMain(){
   document.querySelector(".js-products-grid").innerHTML=generateHTMLToDisplayProducts();
 }
 
-export function AddToCartInCheckOut(){
+DisplayProductsInMain();
+// export function AddToCartInCheckOut(){
   document.querySelectorAll('.js-add-to-cart-button').forEach((button)=>{
     button.addEventListener("click",()=>{
       const productId =button.dataset.productId;
       AddToCart(productId);
-      console.log("done");
+      console.log(productId);
     });
   });
-}
-function main(){
-  DisplayProductsInMain();
-  AddToCartInCheckOut();
-}
-main();
+
+  document.querySelector(".js-cart-quantity").innerHTML=getItemQuantityItems();
+
+
+// }
+// function main(){
+
+  // AddToCartInCheckOut();
+// }
+// main();

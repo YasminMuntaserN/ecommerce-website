@@ -1,7 +1,7 @@
 import { getProductByID } from './product.js';
 import { formatCurrency } from "../utils/global.js";
 import { Now ,formatDate } from "../utils/date.js";
-import { cartItems ,setCartItems } from "../EntitiesData/cartData.js";
+import { cartItems ,setCartItems,saveToStorage } from "../EntitiesData/cartData.js";
 
 
 const cart =
@@ -125,23 +125,24 @@ document.querySelector(".js-cart-summary").innerHTML= html;
 
 }
 
-function productExsisAlreadyAdded(productID) {
+function productExsisAlreadyAdded(productId) {
+  let product =null;
   cartItems.forEach(item => {
-      if(item.productId === productID) return item;
+      if(item.productId === productId) product= item;
   });
-  return null;
+  return product;
 }
 
-function PreviousQuantity(productID) {
+function PreviousQuantity(productId) {
   let quantity =1;
-  let item =productExsisAlreadyAdded(product.productId);
+  let item =productExsisAlreadyAdded(productId);
 
   if(item)quantity+=item.quantity;  
 
   return quantity;
 }
 
-export function AddToCart (productID){
+export function AddToCart(productID){
   const product = getProductByID(productID);
       if (!product) {
         return;
@@ -153,7 +154,42 @@ export function AddToCart (productID){
           deliveryOptionId: '3'
         }
       );
+      console.log(product);
+
+      setCartItems(cartItems);
+      saveToStorage(cartItems);
       renderCartItem();
+
+      document.querySelector(".js-cart-quantity").innerHTML=getItemQuantityItems();
+
+      document.querySelector(".cart-quantity").innerHTML=getItemQuantityItems();
+      addedMessage(productID);
+}
+
+// Initialize the timeout storage object
+const addedMessageTimeouts = {};
+
+function addedMessage(productId) {
+  // Check if there's a previous timeout for this product. If there is, we should stop it.
+  const previousTimeoutId = addedMessageTimeouts[productId];
+  if (previousTimeoutId) {
+    clearTimeout(previousTimeoutId);
+  }
+
+  // Update the message content
+  const messageElement = document.querySelector(`.added-to-cart-message-${productId}`);
+  messageElement.innerHTML = '<img src="../../imgs/icons/checkmark.png"> Added ';
+
+  // Add the class to make the message visible
+  messageElement.classList.add('added-to-cart-visible');
+
+  // Set a new timeout to remove the 'added-to-cart-visible' class after 2000 milliseconds (2 seconds)
+  const timeoutId = setTimeout(() => {
+    messageElement.classList.remove('added-to-cart-visible');
+  }, 2000);
+
+  // Save the timeoutId for this product so we can stop it later if needed.
+  addedMessageTimeouts[productId] = timeoutId;
 }
 
 export function removeItemFromCart(productId)
@@ -165,4 +201,13 @@ export function removeItemFromCart(productId)
       newcartItems.push(item);
   });
   setCartItems(newcartItems);
+  saveToStorage(cartItems);
+}
+
+export function getItemQuantityItems(){
+  let total=0;
+  cartItems.forEach(element => {
+    total+=PreviousQuantity(element.quantity);
+  });
+  return total;
 }

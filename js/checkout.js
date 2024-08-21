@@ -15,7 +15,5 @@ renderCartItem();
         elementToDelete.remove();
   });
 });
-// }
-// Delete();
 
 
