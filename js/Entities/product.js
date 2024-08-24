@@ -1,23 +1,32 @@
-import { products } from '../EntitiesData/productData.js';
+import { formatCurrency } from "../utils/money.js";
 
-export const product = {
-  id: '',               
-  image: '',               
-  name: '',      
-  rating: {
-    stars: 0,
-    count: 0,
-  },    
-  priceCents: 0  
-};
+export class Product {
+  id;
+  image;
+  name;
+  rating;
+  priceCents;
 
-export function getProductByID(productID) {
-  let p =null;
-  products.forEach(product => {
-    if(product.id === productID){
-      p=product;
-      console.log("Founded");
-  };
-  });
-  return p;
+  constructor(productDetails) {
+    if (!productDetails) {
+      return;
+    }
+    this.id = productDetails.id;
+    this.image = productDetails.image;
+    this.name = productDetails.name;
+    this.rating = productDetails.rating;
+    this.priceCents = productDetails.priceCents;
+  }
+
+  getStarsUrl() {
+    return `images/ratings/rating-${this.rating.stars * 10}.png`;
+  }
+
+  getPrice() {
+    return `$${formatCurrency(this.priceCents)}`;
+  }
+
+  extraInfoHTML() {
+    return "";
+  }
 }

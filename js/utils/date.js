@@ -26,4 +26,3 @@ export function isWeekend(date) {
   const dayOfWeek = getFullDayName(date);
 
   return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
-}
