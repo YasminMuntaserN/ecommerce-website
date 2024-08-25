@@ -4,8 +4,8 @@
 
 // import { AddToCartInCheckOut } from './Amazon.js';
 
-import { cartItems } from "./EntitiesData/cartData";
-import { getProductByID } from './Entities/product.js';
+import { cartItems } from "./data/products.js";
+import { getProductByID } from './entities/product.js';
 import {getDeliveryOptions} from '../EntitiesData/deliveryOptions.js'
 
 export function calculateTotalProductPriceCents(){

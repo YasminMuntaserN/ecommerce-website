@@ -63,7 +63,7 @@ function renderProductHTML() {
 }
 
 function displayAllProducts() {
-  const productGridElement = document.querySelector(".js-prodcut-grid");
+  const productGridElement = document.querySelector(".js-products-grid");
   if (!productGridElement) {
     return;
   }
