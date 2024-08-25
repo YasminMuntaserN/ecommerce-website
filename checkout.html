@@ -14,397 +14,393 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Here are the CSS files for this page. -->
-    <link rel="stylesheet" href="css/checkoutHeader.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/checkout.css">
-
+  <!-- Here are the CSS files for this page. -->
+  <link rel="stylesheet" href="styles/shared/general.css">
+  <link rel="stylesheet" href="styles/pages/checkout/checkout-header.css">
+  <link rel="stylesheet" href="styles/pages/checkout/checkout.css">
 </head>
 
 <body>
-  <header class="js-checkout-header checkout-header">
-    <div class="header-content">
-      <section class="left-section">
-        <a href="." data-testid="amazon-logo">
-          <img class="amazon-logo" src="images/amazon-logo.png">
-        </a>
-      </section>
+    <header class="js-checkout-header checkout-header">
+      <div class="header-content">
+        <section class="left-section">
+          <a href="." data-testid="amazon-logo">
+            <img class="amazon-logo" src="images/amazon-logo.png">
+            <img class="amazon-mobile-logo" src="images/amazon-mobile-logo.png">
+          </a>
+        </section>
 
-      <section class="checkout-header-right-section">
-        Checkout (<a class="js-return-to-home-link return-to-home-link" href="." data-testid="cart-quantity">5 items</a>)
+        <section class="middle-section">
+          Checkout (<a class="js-return-to-home-link return-to-home-link" href="." data-testid="cart-quantity">5 items</a>)
 
-        <div class="js-navigation-popover navigation-popover">
-          <!-- <div class="popover-message">
-            Are you sure you want to return to leave checkout?
-          </div>
-          <button class="js-close-navigation-popover button-secondary">
-            Stay in checkout
-          </button>
-          <a href=".">
-            <button class="button-primary">
-              Return to home
+          <div class="js-navigation-popover navigation-popover">
+            <div class="popover-message">
+              Are you sure you want to return to leave checkout?
+            </div>
+            <button class="js-close-navigation-popover button-secondary">
+              Stay in checkout
             </button>
-          </a> -->
+            <a href=".">
+              <button class="button-primary">
+                Return to home
+              </button>
+            </a>
+          </div>
+        </section>
+
+        <section class="right-section">
+          <img src="images/icons/checkout-lock-icon.png">
+        </section>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-title">Review your order</div>
+
+      <section class="checkout-grid">
+        <div class="js-cart-summary cart-summary">
+        <div class="js-cart-item cart-item-container" data-cart-item-id="00f62f04-efb8-498a-bda4-20c7886841b5" data-testid="cart-item-container-00f62f04-efb8-498a-bda4-20c7886841b5">
+
+          <div class="delivery-date">
+            Delivery date:
+            <span class="js-delivery-date">
+              Thursday, August 29
+            </span>
+          </div>
+
+          <div class="cart-item-details-grid">
+            <img class="product-image" src="images/products/athletic-cotton-socks-6-pairs.jpg">
+
+            <div class="cart-item-details">
+              <div class="product-name">
+                Black and Gray Athletic Cotton Socks - 6 Pairs
+              </div>
+
+              <div class="product-price">
+                $10.90
+              </div>
+
+              
+
+              <div class="js-quantity-container product-quantity" data-testid="quantity-container">
+                Quantity: <span class="js-quantity-label quantity-label" data-testid="quantity-label">
+                  2
+                </span>
+
+                <input class="js-new-quantity-input new-quantity-input" type="number" value="2" data-testid="new-quantity-input">
+
+                <span class="js-update-quantity-link update-quantity-link link-primary" data-testid="update-quantity-link">
+                  Update
+                </span>
+
+                <span class="js-save-quantity-link save-quantity-link link-primary" data-testid="save-quantity-link">
+                  Save
+                </span>
+
+                <span class="js-delete-quantity-link delete-quantity-link link-primary" data-testid="delete-quantity-link">
+                  Delete
+                </span>
+              </div>
+            </div>
+
+            <div class="delivery-options">
+              <div class="delivery-options-title">
+                Choose a delivery option:
+              </div>
+
+              
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="f297d333-a5c4-452f-840b-15a662257b3f" data-testid="delivery-option-f297d333-a5c4-452f-840b-15a662257b3f">
+
+          <input class="js-delivery-option-input delivery-option-input" checked="" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Thursday, August 29
+            </div>
+            <div class="delivery-option-price">
+              FREE Shipping
+            </div>
+          </div>
         </div>
+      
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156" data-testid="delivery-option-6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156">
+
+          <input class="js-delivery-option-input delivery-option-input" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Friday, August 23
+            </div>
+            <div class="delivery-option-price">
+              $4.99 - Shipping
+            </div>
+          </div>
+        </div>
+      
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="178aa766-de75-4686-8442-038c1a027003" data-testid="delivery-option-178aa766-de75-4686-8442-038c1a027003">
+
+          <input class="js-delivery-option-input delivery-option-input" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Wednesday, August 21
+            </div>
+            <div class="delivery-option-price">
+              $9.99 - Shipping
+            </div>
+          </div>
+        </div>
+      
+            </div>
+          </div>
+        </div>
+      
+        <div class="js-cart-item cart-item-container" data-cart-item-id="257987ca-1005-4be7-839e-9c7658175626" data-testid="cart-item-container-257987ca-1005-4be7-839e-9c7658175626">
+
+          <div class="delivery-date">
+            Delivery date:
+            <span class="js-delivery-date">
+              Friday, August 23
+            </span>
+          </div>
+
+          <div class="cart-item-details-grid">
+            <img class="product-image" src="images/products/intermediate-composite-basketball.jpg">
+
+            <div class="cart-item-details">
+              <div class="product-name">
+                Intermediate Size Basketball
+              </div>
+
+              <div class="product-price">
+                $20.95
+              </div>
+
+              
+
+              <div class="js-quantity-container product-quantity" data-testid="quantity-container">
+                Quantity: <span class="js-quantity-label quantity-label" data-testid="quantity-label">
+                  1
+                </span>
+
+                <input class="js-new-quantity-input new-quantity-input" type="number" value="1" data-testid="new-quantity-input">
+
+                <span class="js-update-quantity-link update-quantity-link link-primary" data-testid="update-quantity-link">
+                  Update
+                </span>
+
+                <span class="js-save-quantity-link save-quantity-link link-primary" data-testid="save-quantity-link">
+                  Save
+                </span>
+
+                <span class="js-delete-quantity-link delete-quantity-link link-primary" data-testid="delete-quantity-link">
+                  Delete
+                </span>
+              </div>
+            </div>
+
+            <div class="delivery-options">
+              <div class="delivery-options-title">
+                Choose a delivery option:
+              </div>
+
+              
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="f297d333-a5c4-452f-840b-15a662257b3f" data-testid="delivery-option-f297d333-a5c4-452f-840b-15a662257b3f">
+
+          <input class="js-delivery-option-input delivery-option-input" name="257987ca-1005-4be7-839e-9c7658175626-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Thursday, August 29
+            </div>
+            <div class="delivery-option-price">
+              FREE Shipping
+            </div>
+          </div>
+        </div>
+      
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156" data-testid="delivery-option-6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156">
+
+          <input class="js-delivery-option-input delivery-option-input" checked="" name="257987ca-1005-4be7-839e-9c7658175626-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Friday, August 23
+            </div>
+            <div class="delivery-option-price">
+              $4.99 - Shipping
+            </div>
+          </div>
+        </div>
+      
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="178aa766-de75-4686-8442-038c1a027003" data-testid="delivery-option-178aa766-de75-4686-8442-038c1a027003">
+
+          <input class="js-delivery-option-input delivery-option-input" name="257987ca-1005-4be7-839e-9c7658175626-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Wednesday, August 21
+            </div>
+            <div class="delivery-option-price">
+              $9.99 - Shipping
+            </div>
+          </div>
+        </div>
+      
+            </div>
+          </div>
+        </div>
+      
+        <div class="js-cart-item cart-item-container" data-cart-item-id="45d48851-e657-5311-6cd5-0db4b26c6e1e" data-testid="cart-item-container-45d48851-e657-5311-6cd5-0db4b26c6e1e">
+
+          <div class="delivery-date">
+            Delivery date:
+            <span class="js-delivery-date">
+              Thursday, August 29
+            </span>
+          </div>
+
+          <div class="cart-item-details-grid">
+            <img class="product-image" src="images/products/black-2-slot-toaster.jpg">
+
+            <div class="cart-item-details">
+              <div class="product-name">
+                2 Slot Toaster - Black
+              </div>
+
+              <div class="product-price">
+                $18.99
+              </div>
+
+              
+
+              <div class="js-quantity-container product-quantity" data-testid="quantity-container">
+                Quantity: <span class="js-quantity-label quantity-label" data-testid="quantity-label">
+                  2
+                </span>
+
+                <input class="js-new-quantity-input new-quantity-input" type="number" value="2" data-testid="new-quantity-input">
+
+                <span class="js-update-quantity-link update-quantity-link link-primary" data-testid="update-quantity-link">
+                  Update
+                </span>
+
+                <span class="js-save-quantity-link save-quantity-link link-primary" data-testid="save-quantity-link">
+                  Save
+                </span>
+
+                <span class="js-delete-quantity-link delete-quantity-link link-primary" data-testid="delete-quantity-link">
+                  Delete
+                </span>
+              </div>
+            </div>
+
+            <div class="delivery-options">
+              <div class="delivery-options-title">
+                Choose a delivery option:
+              </div>
+
+              
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="f297d333-a5c4-452f-840b-15a662257b3f" data-testid="delivery-option-f297d333-a5c4-452f-840b-15a662257b3f">
+
+          <input class="js-delivery-option-input delivery-option-input" checked="" name="45d48851-e657-5311-6cd5-0db4b26c6e1e-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Thursday, August 29
+            </div>
+            <div class="delivery-option-price">
+              FREE Shipping
+            </div>
+          </div>
+        </div>
+      
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156" data-testid="delivery-option-6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156">
+
+          <input class="js-delivery-option-input delivery-option-input" name="45d48851-e657-5311-6cd5-0db4b26c6e1e-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Friday, August 23
+            </div>
+            <div class="delivery-option-price">
+              $4.99 - Shipping
+            </div>
+          </div>
+        </div>
+      
+        <div class="js-delivery-option delivery-option" data-delivery-option-id="178aa766-de75-4686-8442-038c1a027003" data-testid="delivery-option-178aa766-de75-4686-8442-038c1a027003">
+
+          <input class="js-delivery-option-input delivery-option-input" name="45d48851-e657-5311-6cd5-0db4b26c6e1e-delivery-option" type="radio" data-testid="delivery-option-input">
+
+          <div>
+            <div class="delivery-option-date">
+              Wednesday, August 21
+            </div>
+            <div class="delivery-option-price">
+              $9.99 - Shipping
+            </div>
+          </div>
+        </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="js-payment-summary payment-summary">
+      <div class="js-payment-info">
+      <div class="payment-summary-title">
+        Order Summary
+      </div>
+
+      <div class="payment-summary-row">
+        <div>Items (5):</div>
+        <div class="payment-summary-money" data-testid="product-cost">
+          $80.73
+        </div>
+      </div>
+
+      <div class="payment-summary-row">
+        <div>Shipping &amp; handling:</div>
+        <div class="payment-summary-money" data-testid="shipping-cost">
+          $4.99
+        </div>
+      </div>
+
+      <div class="payment-summary-row subtotal-row">
+        <div>Total before tax:</div>
+        <div class="payment-summary-money" data-testid="sub-total">
+          $85.72
+        </div>
+      </div>
+
+      <div class="payment-summary-row">
+        <div>Estimated tax (10%):</div>
+        <div class="payment-summary-money" data-testid="tax-cost">
+          $8.57
+        </div>
+      </div>
+
+      <div class="payment-summary-row total-row">
+        <div>Order total:</div>
+        <div class="payment-summary-money" data-testid="total-cost">
+          $94.29
+        </div>
+      </div>
+    </div>
+
+      <div class="paypal-toggle">
+        Use PayPal <input type="checkbox" class="js-paypal-toggle" false="">
+      </div>
+
+      <div class="js-payment-buttons-container false" data-testid="payment-buttons-container">
+
+        <div class="js-paypal-button-container paypal-button-container" data-testid="paypal-button-container"></div>
+
+        <button class="js-place-order-button place-order-button button-primary" data-testid="place-order-button">
+          Place your order
+        </button>
+      </div>
+    </div>
       </section>
-
-      <section class="right-section">
-        <img src="images/icons/checkout-lock-icon.png">
-      </section>
-    </div>
-  </header>
-
-  <main>
-    <p class="page-title">Review your order</p>
-
-    <section class="checkout-grid">
-      <div class="js-cart-summary cart-summary">
-      <!-- <div class="js-cart-item cart-item-container" data-cart-item-id="00f62f04-efb8-498a-bda4-20c7886841b5" data-testid="cart-item-container-00f62f04-efb8-498a-bda4-20c7886841b5">
-
-        <div class="delivery-date">
-          Delivery date:
-          <span class="js-delivery-date">
-            Thursday, August 29
-          </span>
-        </div>
-
-        <div class="cart-item-details-grid">
-          <img class="product-image" src="images/products/athletic-cotton-socks-6-pairs.jpg">
-
-          <div class="cart-item-details">
-            <div class="product-name">
-              Black and Gray Athletic Cotton Socks - 6 Pairs
-            </div>
-
-            <div class="product-price">
-              $10.90
-            </div>
-
-            
-
-            <div class="js-quantity-container product-quantity" data-testid="quantity-container">
-              Quantity: <span class="js-quantity-label quantity-label" data-testid="quantity-label">
-                2
-              </span>
-
-              <input class="js-new-quantity-input new-quantity-input" type="number" value="2" data-testid="new-quantity-input">
-
-              <span class="js-update-quantity-link update-quantity-link link-primary" data-testid="update-quantity-link">
-                Update
-              </span>
-
-              <span class="js-save-quantity-link save-quantity-link link-primary" data-testid="save-quantity-link">
-                Save
-              </span>
-
-              <span class="js-delete-quantity-link delete-quantity-link link-primary" data-testid="delete-quantity-link">
-                Delete
-              </span>
-            </div>
-          </div>
-
-          <div class="delivery-options">
-            <div class="delivery-options-title">
-              Choose a delivery option:
-            </div>
-
-            
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="f297d333-a5c4-452f-840b-15a662257b3f" data-testid="delivery-option-f297d333-a5c4-452f-840b-15a662257b3f">
-
-        <input class="js-delivery-option-input delivery-option-input" checked="" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Thursday, August 29
-          </div>
-          <div class="delivery-option-price">
-            FREE Shipping
-          </div>
-        </div>
-      </div>
-    
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156" data-testid="delivery-option-6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156">
-
-        <input class="js-delivery-option-input delivery-option-input" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Friday, August 23
-          </div>
-          <div class="delivery-option-price">
-            $4.99 - Shipping
-          </div>
-        </div>
-      </div>
-    
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="178aa766-de75-4686-8442-038c1a027003" data-testid="delivery-option-178aa766-de75-4686-8442-038c1a027003">
-
-        <input class="js-delivery-option-input delivery-option-input" name="00f62f04-efb8-498a-bda4-20c7886841b5-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Wednesday, August 21
-          </div>
-          <div class="delivery-option-price">
-            $9.99 - Shipping
-          </div>
-        </div>
-      </div>
-    
-          </div>
-        </div>
-      </div>
-    
-      <div class="js-cart-item cart-item-container" data-cart-item-id="257987ca-1005-4be7-839e-9c7658175626" data-testid="cart-item-container-257987ca-1005-4be7-839e-9c7658175626">
-
-        <div class="delivery-date">
-          Delivery date:
-          <span class="js-delivery-date">
-            Friday, August 23
-          </span>
-        </div>
-
-        <div class="cart-item-details-grid">
-          <img class="product-image" src="images/products/intermediate-composite-basketball.jpg">
-
-          <div class="cart-item-details">
-            <div class="product-name">
-              Intermediate Size Basketball
-            </div>
-
-            <div class="product-price">
-              $20.95
-            </div>
-
-            
-
-            <div class="js-quantity-container product-quantity" data-testid="quantity-container">
-              Quantity: <span class="js-quantity-label quantity-label" data-testid="quantity-label">
-                1
-              </span>
-
-              <input class="js-new-quantity-input new-quantity-input" type="number" value="1" data-testid="new-quantity-input">
-
-              <span class="js-update-quantity-link update-quantity-link link-primary" data-testid="update-quantity-link">
-                Update
-              </span>
-
-              <span class="js-save-quantity-link save-quantity-link link-primary" data-testid="save-quantity-link">
-                Save
-              </span>
-
-              <span class="js-delete-quantity-link delete-quantity-link link-primary" data-testid="delete-quantity-link">
-                Delete
-              </span>
-            </div>
-          </div>
-
-          <div class="delivery-options">
-            <div class="delivery-options-title">
-              Choose a delivery option:
-            </div>
-
-            
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="f297d333-a5c4-452f-840b-15a662257b3f" data-testid="delivery-option-f297d333-a5c4-452f-840b-15a662257b3f">
-
-        <input class="js-delivery-option-input delivery-option-input" name="257987ca-1005-4be7-839e-9c7658175626-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Thursday, August 29
-          </div>
-          <div class="delivery-option-price">
-            FREE Shipping
-          </div>
-        </div>
-      </div>
-    
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156" data-testid="delivery-option-6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156">
-
-        <input class="js-delivery-option-input delivery-option-input" checked="" name="257987ca-1005-4be7-839e-9c7658175626-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Friday, August 23
-          </div>
-          <div class="delivery-option-price">
-            $4.99 - Shipping
-          </div>
-        </div>
-      </div>
-    
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="178aa766-de75-4686-8442-038c1a027003" data-testid="delivery-option-178aa766-de75-4686-8442-038c1a027003">
-
-        <input class="js-delivery-option-input delivery-option-input" name="257987ca-1005-4be7-839e-9c7658175626-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Wednesday, August 21
-          </div>
-          <div class="delivery-option-price">
-            $9.99 - Shipping
-          </div>
-        </div>
-      </div>
-    
-          </div>
-        </div>
-      </div>
-    
-      <div class="js-cart-item cart-item-container" data-cart-item-id="45d48851-e657-5311-6cd5-0db4b26c6e1e" data-testid="cart-item-container-45d48851-e657-5311-6cd5-0db4b26c6e1e">
-
-        <div class="delivery-date">
-          Delivery date:
-          <span class="js-delivery-date">
-            Thursday, August 29
-          </span>
-        </div>
-
-        <div class="cart-item-details-grid">
-          <img class="product-image" src="images/products/black-2-slot-toaster.jpg">
-
-          <div class="cart-item-details">
-            <div class="product-name">
-              2 Slot Toaster - Black
-            </div>
-
-            <div class="product-price">
-              $18.99
-            </div>
-
-            
-
-            <div class="js-quantity-container product-quantity" data-testid="quantity-container">
-              Quantity: <span class="js-quantity-label quantity-label" data-testid="quantity-label">
-                2
-              </span>
-
-              <input class="js-new-quantity-input new-quantity-input" type="number" value="2" data-testid="new-quantity-input">
-
-              <span class="js-update-quantity-link update-quantity-link link-primary" data-testid="update-quantity-link">
-                Update
-              </span>
-
-              <span class="js-save-quantity-link save-quantity-link link-primary" data-testid="save-quantity-link">
-                Save
-              </span>
-
-              <span class="js-delete-quantity-link delete-quantity-link link-primary" data-testid="delete-quantity-link">
-                Delete
-              </span>
-            </div>
-          </div>
-
-          <div class="delivery-options">
-            <div class="delivery-options-title">
-              Choose a delivery option:
-            </div>
-
-            
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="f297d333-a5c4-452f-840b-15a662257b3f" data-testid="delivery-option-f297d333-a5c4-452f-840b-15a662257b3f">
-
-        <input class="js-delivery-option-input delivery-option-input" checked="" name="45d48851-e657-5311-6cd5-0db4b26c6e1e-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Thursday, August 29
-          </div>
-          <div class="delivery-option-price">
-            FREE Shipping
-          </div>
-        </div>
-      </div>
-    
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156" data-testid="delivery-option-6e2dd65a-6665-4f24-bcdc-f2ecdbc6e156">
-
-        <input class="js-delivery-option-input delivery-option-input" name="45d48851-e657-5311-6cd5-0db4b26c6e1e-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Friday, August 23
-          </div>
-          <div class="delivery-option-price">
-            $4.99 - Shipping
-          </div>
-        </div>
-      </div>
-    
-      <div class="js-delivery-option delivery-option" data-delivery-option-id="178aa766-de75-4686-8442-038c1a027003" data-testid="delivery-option-178aa766-de75-4686-8442-038c1a027003">
-
-        <input class="js-delivery-option-input delivery-option-input" name="45d48851-e657-5311-6cd5-0db4b26c6e1e-delivery-option" type="radio" data-testid="delivery-option-input">
-
-        <div>
-          <div class="delivery-option-date">
-            Wednesday, August 21
-          </div>
-          <div class="delivery-option-price">
-            $9.99 - Shipping
-          </div>
-        </div>
-      </div>
-    
-          </div>
-        </div>
-      </div> -->
-    </div>
-      <div class="js-payment-summary payment-summary">
-    <div class="js-payment-info">
-    <div class="payment-summary-title">
-      Order Summary
-    </div>
-
-    <div class="payment-summary-row">
-      <div>Items (5):</div>
-      <div class="payment-summary-money" data-testid="product-cost">
-        $80.73
-      </div>
-    </div>
-
-    <div class="payment-summary-row">
-      <div>Shipping &amp; handling:</div>
-      <div class="payment-summary-money" data-testid="shipping-cost">
-        $4.99
-      </div>
-    </div>
-
-    <div class="payment-summary-row subtotal-row">
-      <div>Total before tax:</div>
-      <div class="payment-summary-money" data-testid="sub-total">
-        $85.72
-      </div>
-    </div>
-
-    <div class="payment-summary-row">
-      <div>Estimated tax (10%):</div>
-      <div class="payment-summary-money" data-testid="tax-cost">
-        $8.57
-      </div>
-    </div>
-
-    <div class="payment-summary-row total-row">
-      <div>Order total:</div>
-      <div class="payment-summary-money" data-testid="total-cost">
-        $94.29
-      </div>
-    </div>
-  </div>
-
-    <div class="paypal-toggle">
-      Use PayPal <input type="checkbox" class="js-paypal-toggle" false="">
-    </div>
-
-    <div class="js-payment-buttons-container false" data-testid="payment-buttons-container">
-
-      <div class="js-paypal-button-container paypal-button-container" data-testid="paypal-button-container"></div>
-
-      <button class="js-place-order-button place-order-button button-primary" data-testid="place-order-button">
-        Place your order
-      </button>
-    </div>
-  </div>
-    </section>
-  </main>
-</body>
-
-</html>
-<script type="module" src="js/checkout.js"></script>
+    </main>

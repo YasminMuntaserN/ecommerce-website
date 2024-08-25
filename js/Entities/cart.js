@@ -1,4 +1,9 @@
-import { Product } from './product.js';
+import { getPriceOfProduct } from "../data/products.js";
+import {
+  getPriceOfDeliveryOption,
+  existDeliveryOption,
+} from "../data/deliveryOptions.js";
+
 
 class Cart {
   cartItems;
